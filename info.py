@@ -42,7 +42,7 @@ FSUB_PICS = (environ.get('FSUB_PICS', 'https://graph.org/file/7478ff3eac37f4329c
 # Admin, Channels & Users Configuration
 # ============================
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '7859995064').split()] # Replace with the actual admin ID(s) to add
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002533229703').split()]  # Channel id for auto indexing (make sure bot is admin)
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002533229703 -1002533695302 -1002633335930').split()]  # Channel id for auto indexing (make sure bot is admin)
 
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002900228022'))  # Log channel id (make sure bot is admin)
 BIN_CHANNEL = int(environ.get('BIN_CHANNEL', '-1002900228022'))  # Bin channel id (make sure bot is admin)
@@ -63,11 +63,11 @@ QR_CODE = environ.get('QR_CODE', 'Bᴏᴛ Is Nᴏᴡ Fʀᴇᴇ Tᴏ Usᴇ Fᴏʀ
 OWNER_UPI_ID = environ.get('OWNER_UPI_ID', 'Aᴠᴀɪʟᴀʙʟᴇ Sᴏᴏɴ...')    # Owner UPI ID for payments
 
 STAR_PREMIUM_PLANS = {
-    ᪥ 10: "7day",
-   ᪥ 20: "15day",    
-   ⍟ 40: "1month", 
-   ⍟ 55: "45day",
-   ⍟ 75: "60day",
+     10: "7day",
+    20: "15day",    
+    40: "1month", 
+    55: "45day",
+    75: "60day",
 }  # Premium plans with their respective durations in days
 
 # ============================
@@ -96,8 +96,8 @@ LANDSCAPE_POSTER = bool(environ.get('LANDSCAPE_POSTER', True)) # Shows landscape
 # Verification Settings
 # ============================
 IS_VERIFY = is_enabled('IS_VERIFY', False)  # Verification On (True) / Off (False)
-LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-100')) #Verification Channel Id 
-LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-100')) #If Anyone Set Your Bot In Any Group And Set Shortner In That Group Then In This Channel The All Details Come
+LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002900228022')) #Verification Channel Id 
+LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1002900228022')) #If Anyone Set Your Bot In Any Group And Set Shortner In That Group Then In This Channel The All Details Come
 VERIFY_IMG = environ.get("VERIFY_IMG", "https://telegra.ph/file/9ecc5d6e4df5b83424896.jpg")
 
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/graduate_movies")   # Tutorial link for verification
