@@ -185,15 +185,7 @@ async def next_page(bot, query):
                            "Sᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
                    ]
                    )
-        btn.insert(0,
-                   [
-                       InlineKeyboardButton(
-                           "ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-                       InlineKeyboardButton(
-                           "Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
-
-                   ]
-                   )
+        
 
     else:
         btn = []
@@ -207,11 +199,7 @@ async def next_page(bot, query):
                            "Sᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
                    ]
                    )
-        btn.insert(0, [
-            InlineKeyboardButton(
-                "ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-            InlineKeyboardButton("Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
-        ])
+        
     if ULTRA_FAST_MODE:
         if 0 < offset <= 10:
             off_set = 0
@@ -462,13 +450,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
                            "Sᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
                    ]
                    )
-        btn.insert(0,
-                   [
-                       InlineKeyboardButton(
-                           "ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-                       InlineKeyboardButton(
-                           "Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
-                   ])
+        
     else:
         btn = []
         btn.insert(0,
@@ -481,14 +463,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
                            "Sᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
                    ]
                    )
-        btn.insert(0,
-                   [
-                       InlineKeyboardButton(
-                           "ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-                       InlineKeyboardButton(
-                           "Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
-
-                   ])
+        
     if offset != "":
         try:
             if settings['max_btn']:
@@ -621,14 +596,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                            "Sᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
                    ]
                    )
-        btn.insert(0,
-                   [
-                       InlineKeyboardButton(
-                           "ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-                       InlineKeyboardButton(
-                           "Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
-                   ]
-                   )
+        
     else:
         btn = []
         btn.insert(0,
@@ -640,13 +608,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
                        InlineKeyboardButton(
                            "Sᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
                    ])
-        btn.insert(0,
-                   [
-                       InlineKeyboardButton(
-                           "ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-                       InlineKeyboardButton(
-                           "Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
-                   ])
+        
     if offset != "":
         try:
             if settings['max_btn']:
@@ -775,14 +737,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton("Sᴇᴀꜱᴏɴ", callback_data=f"seasons#{key}"),
         ],
     )
-    btn.insert(
-        0,
-        [
-            InlineKeyboardButton(
-                "ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-            InlineKeyboardButton("Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}"),
-        ],
-    )
+    
     if n_offset != "":
         try:
             if settings['max_btn']:
@@ -1395,7 +1350,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             username = query.from_user.mention
             log_msg = await client.send_cached_media(chat_id=BIN_CHANNEL, file_id=file_id,)
             fileName = {quote_plus(get_name(log_msg))}
-            dreamx_stream = f"{URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+            dreamx_stream = "{URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
             dreamx_download = f"{URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
             await query.answer(MSG_ALRT)
             await asyncio.sleep(1)
@@ -1518,9 +1473,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "about":
         buttons = [[
             InlineKeyboardButton('‼️ ᴅɪꜱᴄʟᴀɪᴍᴇʀ ‼️', callback_data='disclaimer'),
-            InlineKeyboardButton ('🪔 sᴏᴜʀᴄᴇ', callback_data='source'),
+            InlineKeyboardButton ('« sᴏᴜʀᴄᴇ »', callback_data='source'),
         ],[
-            InlineKeyboardButton('ᴅᴏɴᴀᴛɪᴏɴ 💰', callback_data='donation'),
+            InlineKeyboardButton('ᴅᴏɴᴀᴛɪᴏɴ 💸', callback_data='donation'),
         ],[
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ᴛᴏ ʜᴏᴍᴇ ⇋', callback_data='start')
         ]]
@@ -1568,7 +1523,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
     elif query.data == "source":
         buttons = [[
-            InlineKeyboardButton('ᴅʀᴇᴀᴍxʙᴏᴛᴢ 📜', url='https://github.com/DreamXBotz/Auto_Filter_Bot.git'),
+            InlineKeyboardButton('Oᴡɴᴇʀ ☏︎', url='https://t.me/Yours_Swapno'),
             InlineKeyboardButton('⇋ ʙᴀᴄᴋ ⇋', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -1842,14 +1797,7 @@ async def auto_filter(client, msg, spoll=False):
                                "Sᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
                        ]
                        )
-            btn.insert(0,
-                       [
-                           InlineKeyboardButton(
-                               "ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-                           InlineKeyboardButton(
-                               "Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
-
-                       ])
+            
         else:
             btn = []
             btn.insert(0,
@@ -1862,13 +1810,7 @@ async def auto_filter(client, msg, spoll=False):
                                "Sᴇᴀsᴏɴ",  callback_data=f"seasons#{key}")
                        ]
                        )
-            btn.insert(0,
-                       [
-                           InlineKeyboardButton(
-                               "ʀᴇᴍᴏᴠᴇ ᴀᴅs", url=f"https://t.me/{temp.U_NAME}?start=premium"),
-                           InlineKeyboardButton(
-                               "Sᴇɴᴅ Aʟʟ", callback_data=f"sendfiles#{key}")
-                       ])
+            
 
         if offset != "":
             req = message.from_user.id if message.from_user else 0
